@@ -167,8 +167,8 @@ export default function ServiciiPage() {
             </p>
           </AnimatedDiv>
 
-          {/* Mobile Layout - Grid 2 columns */}
-          <div className="lg:hidden grid grid-cols-2 gap-4 mb-12">
+          {/* Mobile Layout - Single column */}
+          <div className="lg:hidden flex flex-col gap-4 mb-12">
             {services.map((service, index) => (
               <AnimatedDiv
                 key={service.id}
@@ -177,26 +177,26 @@ export default function ServiciiPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <div className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-sm h-full flex flex-col">
-                  <div className="bg-black-light h-24 flex items-center justify-center">
+                <div className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-sm flex items-center gap-4 p-4">
+                  <div className="bg-black-light w-20 h-20 flex items-center justify-center rounded-lg">
                     <div className="text-primary">{service.icon}</div>
                   </div>
-                  <div className="p-4 flex flex-col flex-grow">
-                    <h3 className="heading-3 text-lg mb-2 text-center">{service.title}</h3>
-                    <p className="text-body text-sm mb-3 text-center flex-grow">{service.description}</p>
-                    <div className="space-y-2 mb-3">
-                      <div className="bg-gray px-2 py-1.5 rounded text-center">
+                  <div className="flex flex-col flex-grow">
+                    <h3 className="heading-3 text-lg mb-1">{service.title}</h3>
+                    <p className="text-body text-sm mb-2">{service.description}</p>
+                    <div className="flex gap-2 mb-3">
+                      <div className="bg-gray px-3 py-1.5 rounded text-center flex-1">
                         <span className="text-xs text-gray-600 block">Durată</span>
-                        <p className="font-semibold text-sm">{service.duration}</p>
+                        <p className="font-semibold text-sm leading-tight">{service.duration}</p>
                       </div>
-                      <div className="bg-gray px-2 py-1.5 rounded text-center">
+                      <div className="bg-gray px-3 py-1.5 rounded text-center flex-1">
                         <span className="text-xs text-gray-600 block">Preț</span>
-                        <p className="font-semibold text-sm">{service.price}</p>
+                        <p className="font-semibold text-sm leading-tight">{service.price}</p>
                       </div>
                     </div>
                     <Link
                       href="/contact"
-                      className="btn-primary text-sm px-3 py-2 text-center block"
+                      className="btn-primary text-sm px-3 py-2 text-center inline-block w-full"
                     >
                       Ofertă
                     </Link>
