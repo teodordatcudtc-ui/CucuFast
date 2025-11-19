@@ -59,7 +59,7 @@ export default function QuickContactButton() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-primary text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="bg-primary text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 relative z-10"
           aria-label="Programare rapidă"
         >
           {isOpen ? (
@@ -72,6 +72,7 @@ export default function QuickContactButton() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
+              className="relative z-10"
             >
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
@@ -86,6 +87,7 @@ export default function QuickContactButton() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
+              className="relative z-10"
             >
               <path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .948.684l1.498 4.493a1 1 0 0 1-.502 1.21l-2.257 1.13a11.042 11.042 0 0 0 5.516 5.516l1.13-2.257a1 1 0 0 1 1.21-.502l4.493 1.498a1 1 0 0 1 .684.949V19a2 2 0 0 1-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>

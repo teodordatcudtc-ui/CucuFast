@@ -127,7 +127,7 @@ export default function Home() {
                   Vezi serviciile
                 </Link>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+              <div className="flex flex-wrap justify-center gap-3 mt-8">
                 {[
                   { value: '15+', label: 'Ani experiență' },
                   { value: '24/7', label: 'Asistență rapidă' },
@@ -135,10 +135,10 @@ export default function Home() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl py-4 px-6 border border-white/20"
+                    className="bg-white/10 backdrop-blur-sm rounded-lg py-2 px-4 border border-white/20"
                   >
-                    <p className="text-3xl font-bold text-primary mb-1">{item.value}</p>
-                    <p className="text-sm uppercase tracking-wide text-white/80">{item.label}</p>
+                    <p className="text-xl font-bold text-primary mb-0.5">{item.value}</p>
+                    <p className="text-xs uppercase tracking-wide text-white/80">{item.label}</p>
                   </div>
                 ))}
               </div>

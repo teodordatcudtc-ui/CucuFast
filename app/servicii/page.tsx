@@ -22,8 +22,7 @@ const services = [
       </svg>
     ),
     title: 'Diagnoză Auto',
-    description: 'Scanare completă cu echipament profesional OBD pentru identificarea rapidă a problemelor. Diagnosticăm toate sistemele: motor, transmisie, ABS, airbag, climatizare și multe altele.',
-    details: 'Folosim scanere profesionale care accesează toate modulele electronice ale autovehiculului. Diagnosticăm erorile, le interpretăm și oferim soluții clare pentru reparație.',
+    description: 'Scanare completă cu echipament profesional OBD pentru identificarea rapidă a problemelor.',
     duration: '30-60 minute',
     price: 'De la 150 RON',
   },
@@ -37,8 +36,7 @@ const services = [
       </svg>
     ),
     title: 'Geometrie Roți',
-    description: 'Reglaj precis al unghiurilor roților (convergență, divergență, unghi de cădere) pentru siguranță maximă, uzură uniformă a anvelopelor și consum optim de combustibil.',
-    details: 'Echipament 3D de ultimă generație pentru măsurători precise. Reglăm toate unghiurile conform specificațiilor producătorului pentru fiecare model de autovehicul.',
+    description: 'Reglaj precis al unghiurilor roților pentru siguranță maximă și uzură uniformă a anvelopelor.',
     duration: '45-60 minute',
     price: 'De la 120 RON',
   },
@@ -51,8 +49,7 @@ const services = [
       </svg>
     ),
     title: 'Revizii și Întreținere',
-    description: 'Pachete complete de întreținere: schimb ulei și filtre, verificări sistem, curățare, pentru siguranța și longevitatea autovehiculului tău.',
-    details: 'Oferim pachete de revizie adaptate nevoilor tale: revizie mică (ulei + filtru ulei), revizie medie (+ filtre aer/combustibil), revizie completă (+ verificări sisteme, curățare).',
+    description: 'Pachete complete de întreținere: schimb ulei și filtre, verificări sistem pentru siguranța ta.',
     duration: '1-2 ore',
     price: 'De la 200 RON',
   },
@@ -70,8 +67,7 @@ const services = [
       </svg>
     ),
     title: 'Sistem Luminii',
-    description: 'Reglaje faruri, înlocuire becuri, upgrade la LED, diagnostic și reparații sistem de iluminat pentru siguranță maximă pe timp de noapte.',
-    details: 'Reglăm corect unghiul farurilor, înlocuim becuri arse, oferim upgrade-uri la LED pentru iluminare superioară și diagnosticăm problemele sistemului de iluminat.',
+    description: 'Reglaje faruri, înlocuire becuri, upgrade la LED pentru siguranță maximă pe timp de noapte.',
     duration: '30-90 minute',
     price: 'De la 80 RON',
   },
@@ -85,8 +81,7 @@ const services = [
       </svg>
     ),
     title: 'Aer Condiționat',
-    description: 'Încărcare freon, curățare sistem, diagnostic și reparații pentru un confort optim în cabină. Servicii pentru toate tipurile de sisteme AC.',
-    details: 'Verificăm presiunea sistemului, detectăm scurgeri, curățăm evaporatorul și radiatorul, încărcăm freon conform specificațiilor și testăm funcționarea completă.',
+    description: 'Încărcare freon, curățare sistem, diagnostic și reparații pentru un confort optim în cabină.',
     duration: '1-2 ore',
     price: 'De la 180 RON',
   },
@@ -100,8 +95,7 @@ const services = [
       </svg>
     ),
     title: 'Sistem Răcire',
-    description: 'Verificări complete, înlocuire lichid răcire, reparații radiator, pompa de apă, termostat și toate componentele sistemului de răcire.',
-    details: 'Diagnosticăm problemele sistemului de răcire, verificăm etanșeitatea, înlocuim componente uzate (pompa de apă, termostat, furtunuri) și refacem lichidul de răcire.',
+    description: 'Verificări complete, înlocuire lichid răcire, reparații radiator și pompa de apă.',
     duration: '1-3 ore',
     price: 'De la 200 RON',
   },
@@ -116,8 +110,7 @@ const services = [
       </svg>
     ),
     title: 'Sistem Evacuare',
-    description: 'Reparații găuri, înlocuire țevi, catalizator, silențioase și toate componentele sistemului de evacuare pentru performanță optimă și conformitate ecologică.',
-    details: 'Identificăm și reparăm găurile din sistem, înlocuim componente deteriorate (catalizator, silențioase, țevi), verificăm etanșeitatea și testăm funcționarea.',
+    description: 'Reparații găuri, înlocuire țevi, catalizator și silențioase pentru performanță optimă.',
     duration: '1-4 ore',
     price: 'De la 250 RON',
   },
@@ -213,8 +206,8 @@ export default function ServiciiPage() {
             ))}
           </div>
 
-          {/* Desktop Layout - Grid 2 columns */}
-          <div className="hidden lg:grid lg:grid-cols-2 gap-6 mb-12">
+          {/* Desktop Layout - Single column, wide and short */}
+          <div className="hidden lg:block space-y-6 mb-12">
             {services.map((service, index) => (
               <AnimatedDiv
                 key={service.id}
@@ -225,32 +218,34 @@ export default function ServiciiPage() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="scroll-mt-24"
               >
-                <div className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-sm h-full flex flex-col">
-                  {/* Image Section */}
-                  <div className="bg-black-light h-48 flex items-center justify-center relative">
+                <div className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-row">
+                  {/* Image Section - Smaller */}
+                  <div className="bg-black-light w-32 flex-shrink-0 flex items-center justify-center relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-black/40"></div>
                     <div className="text-primary relative z-10">{service.icon}</div>
                   </div>
-                  {/* Content Section */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h2 className="heading-2 text-3xl mb-3 text-center">{service.title}</h2>
-                    <p className="text-body text-base mb-4 text-center flex-grow">{service.description}</p>
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div className="bg-gray px-4 py-2.5 rounded-lg text-center">
-                        <span className="text-sm text-gray-600 block">Durată</span>
-                        <p className="font-semibold">{service.duration}</p>
-                      </div>
-                      <div className="bg-gray px-4 py-2.5 rounded-lg text-center">
-                        <span className="text-sm text-gray-600 block">Preț</span>
-                        <p className="font-semibold">{service.price}</p>
-                      </div>
+                  {/* Content Section - Horizontal layout */}
+                  <div className="p-6 flex flex-row items-center justify-between flex-grow gap-6">
+                    <div className="flex-grow">
+                      <h2 className="heading-2 text-2xl mb-2">{service.title}</h2>
+                      <p className="text-body text-sm mb-0">{service.description}</p>
                     </div>
-                    <Link
-                      href="/contact"
-                      className="btn-primary px-4 py-2.5 text-center block"
-                    >
-                      Solicită ofertă
-                    </Link>
+                    <div className="flex gap-4 items-center">
+                      <div className="bg-gray px-4 py-2 rounded-lg text-center min-w-[100px]">
+                        <span className="text-xs text-gray-600 block">Durată</span>
+                        <p className="font-semibold text-sm">{service.duration}</p>
+                      </div>
+                      <div className="bg-gray px-4 py-2 rounded-lg text-center min-w-[100px]">
+                        <span className="text-xs text-gray-600 block">Preț</span>
+                        <p className="font-semibold text-sm">{service.price}</p>
+                      </div>
+                      <Link
+                        href="/contact"
+                        className="btn-primary px-6 py-2.5 whitespace-nowrap"
+                      >
+                        Solicită ofertă
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </AnimatedDiv>
