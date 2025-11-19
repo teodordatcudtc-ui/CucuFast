@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Cucu Fast Service Development Team
+Contact: contact@cucufastservice.ro
+Location: Voluntari, România
+
+/* THANKS */
+Framework: Next.js
+Styling: Tailwind CSS
+Animations: Framer Motion
+Icons: Custom SVG
+
+/* SITE */
+Last update: 2024/01/15
+Language: Romanian
+Doctype: HTML5
+
